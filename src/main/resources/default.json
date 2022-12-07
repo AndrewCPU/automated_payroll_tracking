@@ -1,0 +1,13 @@
+{
+  "location": {
+    "MONDAY" : "B3",
+    "TUESDAY": "B4",
+    "WEDNESDAY": "B5",
+    "THURSDAY": "B6",
+    "FRIDAY": "B7",
+    "SATURDAY": "B8",
+    "SUNDAY": "B9",
+    "TOTAL": "B11",
+    "DATE": "B12"
+  }
+}
