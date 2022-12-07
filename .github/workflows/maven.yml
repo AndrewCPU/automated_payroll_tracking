@@ -43,7 +43,7 @@ jobs:
             java-version: 17
         - run: mvn -B install --file pom.xml -DskipTests
         - run: mkdir staging && cp target/*jar-with-dependencies.jar staging
-        - run: cp target/*jar-with-dependencies ./
+        - run: cp target/*jar-with-dependencies.jar ./
         - uses: actions/upload-artifact@v1
           with:
             name: Package
