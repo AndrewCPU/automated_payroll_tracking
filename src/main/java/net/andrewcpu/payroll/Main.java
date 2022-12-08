@@ -14,7 +14,7 @@ public class Main {
 
 	private ApplicationInitializationDAO applicationInitializationDAO;
 
-	private static final Logger logger = LogManager.getLogger();
+	private static final Logger loggers = LogManager.getLogger();
 
 	public Main() {
 		applicationInitializationDAO = new ApplicationInitializationDAO();
