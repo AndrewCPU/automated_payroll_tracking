@@ -5,9 +5,13 @@ import org.apache.poi.ss.formula.functions.T;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class FileUtil {
@@ -100,12 +104,14 @@ public class FileUtil {
 		return new File(getPayrollDirectory().toFile(), fileName).toPath();
 	}
 
-	public static File getDefaultSpreadsheetFile() {
-		return new File(FileUtil.class.getClassLoader().getResource("PAYROLL.xlsx").getFile());
+
+	public static InputStream getDefaultSpreadsheetFile() {
+		return FileUtil.class.getClassLoader().getResourceAsStream("PAYROLL.xlsx");
+//		return new File(FileUtil.class.getClassLoader().getResource("PAYROLL.xlsx").getFile());
 	}
 
-	public static File getDefaultConfigurationFile() {
-		return new File(FileUtil.class.getClassLoader().getResource("default.json").getFile());
+	public static InputStream getDefaultConfigurationFile() {
+		return FileUtil.class.getClassLoader().getResourceAsStream("default.json");
 	}
 
 	public static Path getSpreadsheetExtractedPath() {

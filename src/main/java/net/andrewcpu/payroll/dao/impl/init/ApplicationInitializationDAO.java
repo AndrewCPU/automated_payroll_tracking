@@ -33,8 +33,8 @@ public class ApplicationInitializationDAO extends DAO implements InitializationD
 		if(!configFile.exists()) {
 			getLogger().info("Config does not exist. Copying default config.");
 			try {
-				Files.copy(FileUtil.getDefaultConfigurationFile().toPath(),configFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
-				Files.copy(getDefaultSpreadsheetFile().toPath(), new File(FileUtil.getConfigDirectory().toFile(),"sheet.xlsx").toPath(), StandardCopyOption.REPLACE_EXISTING);
+				Files.copy(FileUtil.getDefaultConfigurationFile(),configFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				Files.copy(getDefaultSpreadsheetFile(), new File(FileUtil.getConfigDirectory().toFile(),"sheet.xlsx").toPath(), StandardCopyOption.REPLACE_EXISTING);
 			} catch (Exception e) {
 				throw new RuntimeException(e);
 			}
